@@ -1,0 +1,207 @@
+body, html {
+	background-color: white;
+	color:black;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	overflow: hidden;
+	height: 100%;
+	margin: 0px;
+	cursor: default;
+}
+
+.content {
+	padding-left:10px;
+}
+
+.editor_button button {
+	border:1px solid #CCC;
+	border-radius: 6px;
+	background-color: #FFF;
+	color: #999;
+	cursor: pointer;
+}
+
+.editor_action_bar .editor_button button {
+	padding:10px;
+	margin:0px;
+}
+
+.editor_action_bar .editor_button button:hover  {
+	background-color: #999;
+	color: #FFF;
+	cursor:pointer;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #111;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:hover {
+  background: #06D85F;
+}
+
+.dropdown button {
+	text-align:center;position:relative;
+}
+
+.tools:hover {
+	cursor:pointer;
+}
+
+.round-sm {
+	border-radius: 6px;
+}
+
+.round-med {
+	border-radius: 12px;
+}
+
+/*tabs*/
+.tab,
+.tab-left,
+.tab-right,
+.tab-center {
+	padding: 6px;
+	background-color: #DCDCDC;
+	border: 1px solid #DDD;
+	color: #999;
+}
+
+button.tab:hover,
+button.tab-left:hover,
+button.tab-right:hover,
+button.tab-center:hover  {
+	background-color: #999;
+	color: #EEE;
+	cursor: pointer;
+}
+
+.tab {
+	border-radius: 12px 12px 0px 0px;
+}
+
+.tab-left {
+	border-radius: 0px 12px 0px 0px;
+}
+
+.tab-right {
+	border-radius: 12px 0px 0px 0px;
+}
+
+.editor_action_bar {
+	background-color: #eee;
+	border-bottom: 1px solid #ccc;
+	height: 56px;
+}
+
+.editor_action_bar .editor_button  {
+	height: 36px;
+	display: inline-block;
+	border-right: 1px solid #CCC;
+	font-size: 1em;
+	padding: 10px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+}
+
+.editor_action_bar .editor_button button.inactive {
+	background-color: #CCCCCC;
+	transition: none;	
+}
+
+.left {
+	float: left;
+	width: -moz-calc(33% - 2px);
+	width: -webkit-calc(33% - 2px);
+	width: calc(33% - 2px);
+	border-right: 2px solid #CCC;
+}
+.right {
+	width: 67%;
+	float: right;
+	overflow: auto;
+}
+.right, .left {
+	/*assuming that 80px + editor bar 56px for borders is the header's height*/
+	height: -moz-calc(100% - 56px);
+	height: -webkit-calc(100% - 56px);
+	height: calc(100% - 56px);
+}
+
+.dropdown {
+	position: absolute;
+	z-index: 100;
+}
+.dropdown_content,  .dropdown_content_right {
+	position: relative;
+	background-color: #FFF;
+	border: 2px solid #111;
+	display: inline-block;
+	border-radius: 6px;
+	padding: 10px;
+	top: 20px;
+}
+.float-right {
+	float:right;
+	border-right: 0px solid #CCC;
+	border-left: 1px solid #CCC;
+}
+.float-right .dropdown {
+	right: 0px;
+}
+
+h1 {
+	margin: 0px;
+}
+textarea {
+	resize: none;
+}
+
+.h1 {
+	text-align:center;
+	background-color:black;
+	font-size: 2em;
+	color:white;
+	padding:15px;
+}
+
+iframe {
+	border: 0px solid #FFF;
+	width: 100%;
+	height: 100%;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.dropdown_button {
+	margin: 5px 10px;
+	font-size: 12px;
+}
+.dropdown_icon {
+	padding: 10px 10px;
+	width: 30px; margin: 0px auto 10px auto;
+	text-align: center;
+}
+
+/*docs display */
+.docs_list_title {
+	margin-bottom: 4px;
+}
+.docs_list span {
+	padding: 4px;
+	text-decoration: underline;
+}
+.docs_list .light {
+	color: #999;
+	text-decoration: none;
+}
+.active_doc {
+	border: 1px solid gold;
+}

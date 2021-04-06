@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>lemon editor</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="keywords" content="coding html text editor">
+<meta name="description" content="Simple html editor for downloading HTML files.">
+<!-- this makes sure that the webpage is supported on all devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="editor-frames.css">
+<!-- load inline functions from addons first -->
+<script src="addons/templates.js"></script>
+<script src="editor.js"></script>
+</head>
+<body>
+<div class="frame_wrap"><div class="frame editor_action_bar">
+		<div class="editor_button" onmouseenter="show_docs_list('docs_list'); " onmouseover="document.getElementById('docs_dropdown').style.display='block'"  onmouseout="document.getElementById('docs_dropdown').style.display='none'">
+			<input value="Page Title" onkeyup="if(docs.length == 0) { return; } if(docs[active_index].saved && this.value != docs[active_index].title) { docs[active_index].saved = false; update_save_button (active_index) }" title = "Always the hardest part, isn't it?" style = "padding:10px;background-color:#e9e9e9;border-width:0px;border-style:solid;"id="titlebox"/> 
+			<button>V</button>
+			<div  id="docs_dropdown" class="dropdown" style="display: none; border: 0px solid #FFF;"><div id="docs_list" class="docs_list dropdown_content" style="min-width: 210px;">		
+				<b>SCRATCH PAD</b>
+			</div></div>
+		</div>
+		<div class="editor_button float-right" onmouseover="document.getElementById('dl_dropdown').style.display='block'"  onmouseout="document.getElementById('dl_dropdown').style.display='none'">
+			<button id="create" onclick="create_download ()">Export</button>
+			<div  id="dl_dropdown" class="dropdown" style="display: none;"><div class="dropdown_content">
+			
+				<input  onkeyup="if(docs.length == 0) { return; } if(docs[active_index].saved && this.value != docs[active_index].file) { docs[active_index].saved = false; update_save_button (active_index) }" title = "Go ahead. Be creative." style = "padding:10px;background-color:#e9e9e9;border-width:0px;border-style:solid;" id="filebox" value="index.html"/>
+				<a download="index.html" id="downloadlink" style="display: none">Download</a>
+				
+				
+			</div></div>
+		</div>
+		<div id="save_button" class="editor_button float-right" style="display: none">
+			<button onclick="auto_save()">Save</button>
+		</div>
+		<div class="editor_button">
+			<button id="preview" onclick=" preview_code();">Run</button>
+		</div>	
+			
+		<div class="editor_button" onmouseover="show_templates('import_list'); document.getElementById('import_dropdown').style.display='block'"  onmouseout="document.getElementById('import_dropdown').style.display='none'">
+			<button>Layouts</button>
+			<div  id="import_dropdown" class="dropdown" style="display: none; z-index: 1;"><div id="import_list" class="dropdown_content">			
+					
+			</div></div>
+		</div>	
+	</div>
+</div>
+
+<div class="frame_wrap"><div class="frame">
+	<div class="left">
+
+	<textarea onkeyup="check_saved( active_index, this.value )" title = "Almost done!" style = "width:100%; height: 33%; background-color:#e9e9e9;border-width:0px;border-style:solid;" autocomplete="off" id="cssbox">
+	body {
+
+	}</textarea>	
+	<textarea onkeyup="check_saved( active_index, this.value )"  title = "You got this." style = "width:100%;  height: 67%; background-color:#e9e9e9;border-width:0px;border-style:solid;; border-top: 1px solid #CCC" autocomplete="off" id="textbox"></textarea>
+	</div>	
+	<script>
+	function check_saved (index, value) {
+		if(docs.length == 0) { return; }; if(docs[index].saved && this.value != docs[index].body) { docs[index].saved = false; update_save_button (index) } 
+	}
+	</script>
+	<div class="right" id="preview_frame">
+		
+	</div>
+	
+	<div class="tab-left" style="position: absolute; left: 0px; bottom: 0px; padding-bottom: 0px">
+		JS Template: <button onclick="copy_template()" class="tab-center">Code</button><button onclick="create_template()" class="tab-left">Download</button>
+		<div id="showJS" onmouseleave="this.innerHTML='';" style="position: absolute; bottom: 32px; background: white"></div>
+	</div>	
+</div></div>
+</html>
